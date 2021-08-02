@@ -7,37 +7,26 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Scanner;
 
-public class FileContactsService implements ContactsService {
-    private ContactsList contactsList;
+public class FileContactsService extends InMemoryContactsService {
     private Path file = Paths.get("phonebook.txt");
 
-    public FileContactsService() {
-        contactsList = contactsListFromString(readFile());
-    }
-
-    @Override
-    public ContactsList getAll() {
-        return contactsList;
-    }
-
-    public Contact get(int index) {
-        return contactsList.get(index);
+    {
+        String[] linesArray = readFile().split(" ");
+        for (int i = 0; i < linesArray.length; i += 2) {
+            add(new Contact(linesArray[i], linesArray[i + 1]));
+        }
     }
 
     @Override
     public void remove(int index) {
-        contactsList.remove(index);
+        super.remove(index);
         writeToFile(stringFromContactsList());
     }
 
     @Override
     public void add(Contact c) {
-        contactsList.add(c);
+        super.add(c);
         writeToFile(stringFromContactsList());
-    }
-
-    public int size() {
-        return contactsList.size();
     }
 
     public String readFile() {
@@ -61,12 +50,12 @@ public class FileContactsService implements ContactsService {
         return cL;
     }
 
-    public String stringFromContactsList(){
+    public String stringFromContactsList() {
         StringBuilder result = new StringBuilder();
-        for (int i = 0; i < contactsList.size(); i++) {
-            result.append(contactsList.get(i).getName()).append(" ");
-            result.append(contactsList.get(i).getNumber());
-            if (i != contactsList.size() - 1) {
+        for (int i = 0; i < size(); i++) {
+            result.append(get(i).getName()).append(" ");
+            result.append(get(i).getNumber());
+            if (i != size() - 1) {
                 result.append(System.lineSeparator());
             }
         }

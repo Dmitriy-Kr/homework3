@@ -3,6 +3,7 @@ package ua.homeworkhillel.homework3;
 public class ExitMenuAction implements MenuAction{
     @Override
     public void doAction() {
+
         System.out.println("Завершение работы программы");
     }
 
