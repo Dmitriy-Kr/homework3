@@ -1,4 +1,4 @@
-package ua.homeworkhillel.homework3;
+package ua.homeworkhillel.homework3.services;
 
 import java.io.FileWriter;
 import java.io.IOException;

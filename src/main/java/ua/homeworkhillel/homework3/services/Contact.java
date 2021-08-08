@@ -1,4 +1,4 @@
-package ua.homeworkhillel.homework3;
+package ua.homeworkhillel.homework3.services;
 
 public class Contact {
     private String name;

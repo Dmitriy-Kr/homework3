@@ -1,8 +1,11 @@
-package ua.homeworkhillel.homework3;
+package ua.homeworkhillel.homework3.menu;
+
+import ua.homeworkhillel.homework3.services.Contact;
+import ua.homeworkhillel.homework3.services.ContactsService;
 
 import java.util.Scanner;
 
-public class AddContactMenuAction implements MenuAction{
+public class AddContactMenuAction implements MenuAction {
     Scanner scanner;
     private ContactsService phoneBook;
 

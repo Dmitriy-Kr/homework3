@@ -1,4 +1,4 @@
-package ua.homeworkhillel.homework3;
+package ua.homeworkhillel.homework3.services;
 
 public interface ContactsService {
     ContactsList getAll();
@@ -6,6 +6,5 @@ public interface ContactsService {
     void add(Contact c);
     Contact get(int index);
     int size();
-    String getAllString();
-    String findByLetters(String s);
+    ContactsList findByName(String s);
 }

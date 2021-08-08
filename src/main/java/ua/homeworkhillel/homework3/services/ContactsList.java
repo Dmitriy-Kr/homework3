@@ -1,4 +1,6 @@
-package ua.homeworkhillel.homework3;
+package ua.homeworkhillel.homework3.services;
+
+import ua.homeworkhillel.homework3.services.Contact;
 
 import java.util.NoSuchElementException;
 

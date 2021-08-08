@@ -1,4 +1,6 @@
-package ua.homeworkhillel.homework3;
+package ua.homeworkhillel.homework3.menu;
+
+import ua.homeworkhillel.homework3.menu.MenuAction;
 
 import java.util.Scanner;
 

@@ -1,4 +1,4 @@
-package ua.homeworkhillel.homework3;
+package ua.homeworkhillel.homework3.menu;
 
 public interface MenuAction {
     void doAction();
